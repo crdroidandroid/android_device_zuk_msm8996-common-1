@@ -147,6 +147,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     telephony.lteOnCdmaDevice=1 \
     android.telephony.apn-restore=24000 \
     persist.vendor.qti.telephony.vt_cam_interface=1 \
+    persist.vendor.radio.procedure_bytes=SKIP \
     persist.radio.sw_mbn_update=1 \
     persist.radio.sw_mbn_volte=1 \
     persist.radio.sw_mbn_openmkt=1 \
