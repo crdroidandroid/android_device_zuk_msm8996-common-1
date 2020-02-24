@@ -345,6 +345,11 @@ PRODUCT_PACKAGES += \
     libminijail \
     libmm-omxcore
 
+# Utils
+ifneq ($(findstring aosp, $(TARGET_PRODUCT)),)
+$(call inherit-product, $(LOCAL_PATH)/utils.mk)
+endif
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-impl \
