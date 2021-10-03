@@ -53,7 +53,10 @@ TARGET_SCREEN_WIDTH := 1080
 TARGET_BOOTANIMATION_HALF_RES := true
 
 # Soong namespaces
-PRODUCT_SOONG_NAMESPACES += device/zuk/msm8996-common
+PRODUCT_SOONG_NAMESPACES += \
+    device/zuk/msm8996-common \
+    vendor/qcom/opensource/data-ipa-cfg-mgr \
+    vendor/qcom/opensource/dataservices
 
 # Permissions
 PRODUCT_COPY_FILES += \
