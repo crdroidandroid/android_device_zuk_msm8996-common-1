@@ -314,6 +314,7 @@ PRODUCT_COPY_FILES += \
 # Net
 PRODUCT_PACKAGES += \
     android.system.net.netd@1.0 \
+    android.system.net.netd@1.1.vendor \
     libandroid_net \
     netutils-wrapper-1.0
 
@@ -390,13 +391,14 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-service
 
 # Telephony
-# PRODUCT_PACKAGES += \
-#    ims-ext-common_system \
-#    telephony-ext
+PRODUCT_PACKAGES += \
+    android.hardware.radio@1.4.vendor \
+    android.hardware.radio.config@1.2.vendor \
+    telephony-ext
 
-# PRODUCT_BOOT_JARS += \
-#    ims-ext-common_system \
-#    telephony-ext
+PRODUCT_BOOT_JARS += \
+    ims-ext-common \
+    telephony-ext
 
 # TextClassifier
 PRODUCT_PACKAGES += \
