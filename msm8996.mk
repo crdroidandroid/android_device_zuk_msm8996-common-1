@@ -30,6 +30,7 @@ $(call inherit-product, vendor/zuk/msm8996-common/msm8996-common-vendor.mk)
 $(call inherit-product, frameworks/native/build/phone-xhdpi-4096-dalvik-heap.mk)
 
 PRODUCT_BROKEN_VERIFY_USES_LIBRARIES := true
+RELAX_USES_LIBRARY_CHECK := true
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
