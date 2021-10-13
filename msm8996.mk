@@ -262,10 +262,6 @@ PRODUCT_PACKAGES += \
     libhwbinder \
     libhwbinder.vendor
 
-# IMS
-# PRODUCT_PACKAGES += \
-#     ims-ext-common_system
-
 # Input
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/keylayout/fpc1020tp.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/fpc1020tp.kl \
@@ -384,8 +380,14 @@ PRODUCT_PACKAGES += \
     android.hardware.radio@1.2.vendor \
     android.hardware.radio.config@1.0.vendor \
     android.hardware.radio.deprecated@1.0.vendor \
-    librmnetctl \
-    libxml2
+    android.hardware.secure_element@1.0.vendor \
+    android.hardware.radio@1.4 \
+    android.hardware.radio@1.2 \
+    android.hardware.radio.config@1.0 \
+    android.hardware.radio.deprecated@1.0 \
+    android.hardware.secure_element@1.0 \
+    libcnefeatureconfig \
+    librmnetctl
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
@@ -398,13 +400,17 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-service
 
 # Telephony
-# PRODUCT_PACKAGES += \
-#    ims-ext-common_system \
-#    telephony-ext
+PRODUCT_PACKAGES += \
+    ims-ext-common \
+    ims_ext_common.xml \
+    qti-telephony-hidl-wrapper \
+    qti_telephony_hidl_wrapper.xml \
+    qti-telephony-utils \
+    qti_telephony_utils.xml \
+    telephony-ext
 
-# PRODUCT_BOOT_JARS += \
-#    ims-ext-common_system \
-#    telephony-ext
+PRODUCT_BOOT_JARS += \
+    telephony-ext
 
 # TextClassifier
 PRODUCT_PACKAGES += \
