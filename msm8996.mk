@@ -195,7 +195,7 @@ PRODUCT_PACKAGES += \
     libgenlock \
     liboverlay \
     libtinyxml \
-    libqdMetaData.system \
+    libqdMetaData \
     libvulkan
 
 PRODUCT_COPY_FILES += \
@@ -410,6 +410,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     android.hardware.sensors@1.0-service
+
+# Shims
+PRODUCT_PACKAGES += \
+    lib-imsvt
 
 # Telephony
 PRODUCT_PACKAGES += \
