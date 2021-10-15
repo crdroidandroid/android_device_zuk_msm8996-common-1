@@ -100,6 +100,12 @@ function blob_fixup() {
     vendor/lib64/lib-dplmedia.so)
         patchelf --remove-needed libmedia.so "${2}"
         ;;
+
+    system_ext/lib64/lib-imsvideocodec.so)
+        for LIBDPM_SHIM in $(grep -L "libshim_imsvt.so" "${2}"); do
+            "${PATCHELF}" --add-needed "libshim_imsvt.so" "$LIBDPM_SHIM"
+        done
+        ;;
     esac
 }
 
