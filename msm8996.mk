@@ -373,7 +373,10 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
-    android.hardware.secure_element@1.0 \
+    android.hardware.radio.deprecated@1.0.vendor \
+    android.hardware.radio@1.4.vendor \
+    android.hardware.radio.config@1.0.vendor \
+    android.hardware.secure_element@1.0.vendor \
     libcnefeatureconfig \
     librmnetctl
 
