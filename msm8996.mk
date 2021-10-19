@@ -461,9 +461,6 @@ PRODUCT_PACKAGES += \
     libaacwrapper \
     libnl
 
-PRODUCT_BOOT_JARS += \
-    WfdCommon
-
 # wfd shim
 PRODUCT_PACKAGES += \
     libshim_wfd
