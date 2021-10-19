@@ -266,8 +266,9 @@ PRODUCT_PACKAGES += \
     libhwbinder.vendor
 
 # IMS
-# PRODUCT_PACKAGES += \
-#     ims-ext-common_system
+PRODUCT_PACKAGES += \
+    libavservices_minijail \
+    libavservices_minijail.vendor
 
 # Input
 PRODUCT_COPY_FILES += \
@@ -371,9 +372,9 @@ PRODUCT_COPY_FILES += \
 
 # QMI
 PRODUCT_PACKAGES += \
-    libjson \
     libqti_vndfwk_detect \
-    libqti_vndfwk_detect.vendor
+    libqti_vndfwk_detect.vendor \
+    libjson
 
 # RCS
 PRODUCT_PACKAGES += \
@@ -388,10 +389,10 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
+    android.hardware.radio@1.4.vendor \
+    android.hardware.radio.config@1.0.vendor \
     android.hardware.radio.deprecated@1.0.vendor \
-    android.hardware.radio@1.4 \
-    android.hardware.radio@1.2 \
-    android.hardware.radio.config@1.0 \
+    android.hardware.secure_element@1.0.vendor \
     librmnetctl \
     libxml2
 
@@ -406,13 +407,17 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-service
 
 # Telephony
-# PRODUCT_PACKAGES += \
-#    ims-ext-common_system \
-#    telephony-ext
+PRODUCT_PACKAGES += \
+    ims-ext-common \
+    ims_ext_common.xml \
+    qti-telephony-hidl-wrapper \
+    qti_telephony_hidl_wrapper.xml \
+    qti-telephony-utils \
+    qti_telephony_utils.xml \
+    telephony-ext
 
 # PRODUCT_BOOT_JARS += \
-#    ims-ext-common_system \
-#    telephony-ext
+#     telephony-ext
 
 # TextClassifier
 PRODUCT_PACKAGES += \
