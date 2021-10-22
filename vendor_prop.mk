@@ -146,6 +146,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     DEVICE_PROVISIONED=1 \
     vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
+    persist.sys.fflag.override.settings_provider_model=false \
     ril.subscription.types=NV,RUIM \
     ro.telephony.default_network=10 \
     telephony.lteOnCdmaDevice=1 \
