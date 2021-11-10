@@ -66,17 +66,11 @@ PRODUCT_PRODUCT_PROPERTIES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.media.codec2=2
 
-# CNE
+# CNE/DPM
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.cne.feature=1
-
-# Data modules
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.data.iwlan.enable=true \
-    persist.data.mode=concurrent \
-    persist.radio.aosp_usr_pref_sel=true \
-    persist.data.netmgrd.qos.enable=true \
-    ro.use_data_netmgrd=true
+    persist.vendor.cne.feature=1 \
+    persist.vendor.dpm.feature=0 \
+    persist.vendor.sys.cnd.iwlan=1
 
 # Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -128,6 +122,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.qti.sys.fw.bservice_enable=true
 
+# Netmgrd
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.use_data_netmgrd=true \
+    persist.data.netmgrd.qos.enable=true \
+    persist.vendor.data.mode=concurrent
+
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=libqti-perfd-client.so \
@@ -135,54 +135,32 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Radio
 PRODUCT_PROPERTY_OVERRIDES += \
-    DEVICE_PROVISIONED=1 \
+    persist.radio.multisim.config=dsds \
+    persist.vendor.radio.add_power_save=1 \
+    persist.vendor.radio.apm_sim_not_pwdn=1 \
+    persist.vendor.radio.custom_ecc=1 \
+    persist.vendor.radio.hw_mbn_update=0 \
+    persist.vendor.radio.procedure_bytes=SKIP \
+    persist.vendor.radio.rat_on=combine \
+    persist.vendor.radio.sib16_support=1 \
     rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
-    ril.subscription.types=NV,RUIM \
-    ro.telephony.default_network=10 \
-    telephony.lteOnCdmaDevice=1 \
-    android.telephony.apn-restore=24000 \
-    persist.vendor.qti.telephony.vt_cam_interface=1 \
-    persist.radio.sw_mbn_update=1 \
-    persist.radio.sw_mbn_volte=1 \
-    persist.radio.sw_mbn_openmkt=1 \
-    persist.radio.hw_mbn_update=1 \
+    vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
+
+# Radio (IMS)
+PRODUCT_PROPERTY_OVERRIDES += \
+    service.qti.ims.enabled=1 \
     persist.dbg.volte_avail_ovr=1 \
     persist.dbg.vt_avail_ovr=1 \
-    persist.vendor.radio.custom_ecc=1 \
-    persist.vendor.radio.process_sups_ind=1 \
-    persist.radio.multisim.config=dsds \
-    persist.vendor.radio.sw_mbn_update=1 \
-    persist.vendor.radio.sw_mbn_volte=1 \
-    persist.vendor.radio.sw_mbn_openmkt=1 \
-    persist.vendor.radio.hw_mbn_update=1 \
-    persist.radio.primarycard=true \
-    persist.radio.flexmap_type=dds \
-    persist.vendor.radio.add_power_save=1 \
-    persist.vendor.radio.rat_on=combine \
-    persist.radio.nodisplaytext=true \
-    persist.vendor.radio.ignore_dom_time=10 \
-    persist.logd.size.radio=2M \
-    persist.radio.data_ltd_sys_ind=1 \
-    persist.radio.multisim.config=dsds \
-    persist.radio.apm_sim_not_pwdn=1 \
-    persist.vendor.radio.sib16_support=1 \
-    persist.vendor.radio.custom_ecc=1 \
-    persist.vendor.radio.rat_on=combine
+    persist.dbg.wfc_avail_ovr=1 \
+    persist.vendor.ims.disableIMSLogs=1 \
+    persist.vendor.ims.disableADBLogs=1 \
+    persist.vendor.ims.disableDebugDataPathLogs=1 \
+    persist.vendor.ims.disableDebugLogs=1 \
+    persist.vendor.ims.disableSigHandler=1 \
+    persist.vendor.ims.disableQXDMLogs=1
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.protected_contents=true
-
-# RmNet Data
-PRODUCT_PROPERTY_OVERRIDES += \
-    persist.rmnet.data.enable=true \
-    persist.data.wda.enable=true \
-    persist.data.df.dl_mode=5 \
-    persist.data.df.ul_mode=5 \
-    persist.data.df.agg.dl_pkt=10 \
-    persist.data.df.agg.dl_size=4096 \
-    persist.data.df.mux_count=8 \
-    persist.data.df.iwlan_mux=9 \
-    persist.data.df.dev_name=rmnet_usb0
 
 # Surfaceflinger
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -190,6 +168,25 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.sf.early_app_phase_offset_ns=1500000 \
     debug.sf.early_gl_phase_offset_ns=3000000 \
     debug.sf.early_gl_app_phase_offset_ns=15000000
+
+# Telephony
+PRODUCT_PROPERTY_OVERRIDES += \
+    DEVICE_PROVISIONED=1 \
+    persist.rild.nitz_long_ons_0= \
+    persist.rild.nitz_long_ons_1= \
+    persist.rild.nitz_long_ons_2= \
+    persist.rild.nitz_long_ons_3= \
+    persist.rild.nitz_plmn= \
+    persist.rild.nitz_short_ons_0= \
+    persist.rild.nitz_short_ons_1= \
+    persist.rild.nitz_short_ons_2= \
+    persist.rild.nitz_short_ons_3= \
+    rild.libargs=-d /dev/smd0 \
+    rild.libpath=/vendor/lib64/libril-qc-qmi-1.so \
+    ril.subscription.types=NV,RUIM \
+    ro.telephony.call_ring.multiple=false \
+    ro.telephony.default_network=22,22 \
+    ro.telephony.use_old_mnc_mcc_format=true
 
 # TimeService
 PRODUCT_PROPERTY_OVERRIDES += \
