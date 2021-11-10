@@ -142,6 +142,9 @@ vendor/lib64/liboptizoom.so:lib64/liboptizoom.so
 vendor/lib64/libseemore.so
 vendor/lib64/libubifocus.so:lib64/libubifocus.so
 
+# Camera prebuilt
+system_ext/lib64/vendor.qti.hardware.camera.device@1.0.so
+
 # Camera JNI
 lib64/libjni_makeupV2.so:vendor/lib64/libjni_makeupV2.so
 lib64/libjni_sharpshooter.so:vendor/lib64/libjni_sharpshooter.so
@@ -382,6 +385,9 @@ vendor/lib64/vendor.qti.gnss@1.0.so|4dfa66f66b406c1aff3d32bb44382898beaaa39a
 vendor/lib64/vendor.qti.gnss@1.1.so|a622c409e1d20d2799904e47d8fb07753e830d7a
 vendor/lib64/vendor.qti.gnss@1.2.so|104f245c358ab202a57211f99898406cd5ad8e0e
 vendor/lib64/vendor.qti.gnss@2.0.so|b3f7ae76d4db00edce0c4f5a7084d7abeac0180a
+
+# Graphics prebuilt
+lib64/libqdMetaData.so
 
 # Graphics - from LA.UM.8.6.r1-01900-89xx.0
 vendor/lib64/egl/eglSubDriverAndroid.so|438e77641bdea3e3a02678c2e57801c2c75e118d
