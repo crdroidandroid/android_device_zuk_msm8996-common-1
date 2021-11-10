@@ -775,11 +775,10 @@ vendor/lib/libsensor1.so|d73573eca4e1eaf52f09f9cc7292cdc6d9d69c70
 vendor/lib/libsensor_reg.so|2d95cea1df93dcaae0f067157f6932c1381dec53
 vendor/lib/sensors.ssc.so|96a37b515969d72875debd9ee0a505406d75bd3c
 
-# Thermal - from LA.UM.8.6.r1-01900-89xx.0
-vendor/bin/thermal-engine|2d14a781f9738708a1b8cee4ddf833218ed97e23
--vendor/lib64/libthermalclient.so|61a8dfc6132836e7ed27b044ddc8a078b5c7299e
-vendor/lib64/libthermalioctl.so|3f0b6e48f673ce9f40140ba23ed227f9d1e2420b
--vendor/lib/libthermalclient.so|28fde51ddd79ebd811efe27fc93cb054e60339e4
+# Thermal - from LA.UM.9.6.2.r1-04200-89xx.0
+vendor/bin/thermal-engine|9e48fd5d3bf6414db4d844b421b45f6b6a2f17d4
+-vendor/lib/libthermalclient.so|248fda00d69a626ee8e24159b704a6ae95eceb99
+-vendor/lib64/libthermalclient.so|d042cc537de4950837a5b928f6283fb238a9c59c
 
 # Time services - from LA.UM.9.6.3.r1-04400-89xx.0
 -vendor/app/TimeService/TimeService.apk|1a5f39aa2969feee50ff81ec870b5e2669ae515e
